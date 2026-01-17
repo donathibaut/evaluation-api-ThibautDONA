@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "env-cmd nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -15,6 +15,7 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "env-cmd": "^11.0.0",
     "nodemon": "^3.1.11"
   }
 }
