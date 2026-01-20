@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const bcrypt = require('bcrypt');
 
-const User = new Schema({
+const userSchema = new Schema({
     name : {
         type : String,
         trim : true,
@@ -31,11 +31,16 @@ const User = new Schema({
 });
 
 // hash the password only when modified
-User.pre('save', function() {
+userSchema.pre('save', function(next) {
     if(!this.isModified('password')) {
-        return
+        return next();
     };
-    this.password = bcrypt.hashSync(this.password, 10);
+    try {
+        this.password = bcrypt.hashSync(this.password, 10);
+        next();
+    } catch(e) {
+        next(e);
+    }
 });
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('User', userSchema);

@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "env-cmd nodemon ./bin/www"
+    "start": "env-cmd -f ./src/env/.env nodemon ./bin/www",
+    "dev" : "env-cmd -f ./src/env/.env.dev nodemon ./bin/www",
+    "prod" : "env-cmd -f ./src/env/.env.prod nodemon ./bin/www"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",

@@ -1,14 +1,14 @@
-// connection file to MongoDB
+// connection to MongoDB
 const mongoose = require('mongoose');
 
 const clientOptions = {
-    dbName : "russell-reservations"
+    dbName : "russell-booking"
 };
 
 exports.initClientDbConnection = async () => {
     try {
         await mongoose.connect(process.env.URI_MONGO, clientOptions);
-        console.log("CONNECTION SUCCEED");
+        console.log("CONNECTION SUCCEEDED");
     } catch (e) {
         console.log("ERROR : connection to MongoDB failed !");
         console.log(e);
