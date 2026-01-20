@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Gestion du Port - Accueil' });
+  res.render('index', { 
+    title : "Gestion du Port - Accueil",
+    error : req.query.error
+  });
 });
 
 const service = require('../services/users');

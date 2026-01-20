@@ -21,12 +21,18 @@ app.set('view engine', 'ejs');
 
 app.use(cors());
 app.use(logger('dev'));
-
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../public')));
+
+
+// get elements from HTML forms
 app.use(express.urlencoded({ extended: false }));
 
+// verify authentification to access the dashboard
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public')));
+const auth = require('./middlewares/verify-auth');
+app.use('/dashboard', auth, dashboardRouter);
+
 
 app.use('/', indexRouter);
 app.use('/dashboard', dashboardRouter);
