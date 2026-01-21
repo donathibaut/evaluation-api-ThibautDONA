@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Russell - Réservations</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="/images/favicon/anchor.png" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+        <h1>Réservations</h1>
+    </header>
+    <main>
+        <button>Créer</button>
+        <ul>
+            <% reservations.forEach((info) => { %>
+                <li>
+                    <h2><%= info.catwayNumber %></h2>
+                    <p><%= listDate(info.startDate) %> - <%= listDate(info.endDate) %></p>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
+    <%- include('../../partials/footer') %>
+  </body>
+</html>

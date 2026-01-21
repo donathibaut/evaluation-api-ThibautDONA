@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const dashboardRouter = require('./routes/dashboard');
+const reservationsRouter = require('./routes/lists/reservations');
 
 const mongodb = require('./db/mongo');
 
@@ -36,6 +37,7 @@ app.use('/dashboard', auth, dashboardRouter);
 
 app.use('/', indexRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/reservations', reservationsRouter);
 
 const errorHandler = require('./middlewares/error-handler');
 // catch 404 and forward to error handler

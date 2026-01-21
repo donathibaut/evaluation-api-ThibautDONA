@@ -15,11 +15,11 @@ const reservationSchema = Schema({
         required : [true, "Name required"]
     },
     startDate : {
-        type : String, 
+        type : Date, 
         required : [true, "Date required"]
     },
     endDate : {
-        type : String, 
+        type : Date, 
         required : [true, "Date required"]
     }
 }, {

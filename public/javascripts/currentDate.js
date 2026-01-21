@@ -9,6 +9,6 @@ const currentDate = () => {
     });
 
     area.textContent = date;
-}
+};
 
 window.onload = currentDate;
