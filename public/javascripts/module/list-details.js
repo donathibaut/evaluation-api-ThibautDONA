@@ -8,6 +8,10 @@ export default function listDetails(data) {
     const array = Object.keys(data);
     let htmlContent = "";
 
+    if(data._id) {
+        htmlContent += `<input type="hidden" name="_id" value="${data._id}">`;
+    }
+
     for(let i = 0; i < array.length; i++) {
         // get the data value from an intermediate array
         let key = array[i];
@@ -25,8 +29,9 @@ export default function listDetails(data) {
             type = "datetime-local";
 
             // adapt the date to the good format
-            if(value && typeof value === "string") {
-                value = value.substring(0, 16);
+            if(value) {
+                const newDate = new Date(value);
+                value = newDate.toISOString().slice(0, 16);
             };
         };
 

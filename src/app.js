@@ -34,7 +34,6 @@ app.use(cookieParser());
 const auth = require('./middlewares/verify-auth');
 app.use('/dashboard', auth, dashboardRouter);
 
-
 app.use('/', indexRouter);
 app.use('/reservations', auth, reservationsRouter);
 

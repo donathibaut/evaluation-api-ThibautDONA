@@ -8,12 +8,14 @@
   </head>
   <body>
     <header>
+        <a href="/dashboard">Retour</a>
         <h1>Réservations</h1>
     </header>
     <main>
         <button class="crudBtn">Créer</button>
         <%- include('../../partials/about-info') %>
         <ul>
+            <!-- <li> depending on the database -->
             <% reservations.forEach((info) => { %>
                 <li>
                     <h2>Catway n°<%= info.catwayNumber %></h2>

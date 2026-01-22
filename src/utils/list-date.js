@@ -2,9 +2,7 @@
 function listDate(date) {
     const former = new Date(date);
 
-    const newFormatDate = former.getUTCDate() + "/" + (former.getUTCMonth() + 1) + "/" + former.getUTCFullYear();
-
-    return newFormatDate;
+    return former.toLocaleDateString('fr-FR');
 };
 
 module.exports = listDate;

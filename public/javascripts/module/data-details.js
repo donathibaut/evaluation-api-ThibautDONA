@@ -3,7 +3,7 @@ import listDetails from "./list-details.js";
 
 async function dataDetails(dataName, dataId) {
     const data = await fetchData(dataName, dataId);
-    console.log("Data :" + data);
+    console.log("Data :", data);
 
     listDetails(data);
 

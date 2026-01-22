@@ -17,6 +17,7 @@ router.get('/', async function(req, res, next) {
     }
 });
 
+// fetch data (javascripts/module/fetch-data.js)
 router.get('/api/:id', async (req, res, next) => {
     try {
         const id = req.params.id;
@@ -29,7 +30,7 @@ router.get('/api/:id', async (req, res, next) => {
         res.json(reservation);
     } catch(e) {
         next(e);
-    }
+    };
 });
 
 module.exports = router;
