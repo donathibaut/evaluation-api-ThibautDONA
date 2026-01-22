@@ -8,14 +8,29 @@
   </head>
   <body>
     <header>
-      <h1><%= user.name %></h1>
-      <h2><%= user.email %></h2>
+      <h1>Tableau de Bord</h1>
+
+      <%- include('../partials/nav') %>
+
+      <h2><%= user.name %></h2>
+      <h3><%= user.email %></h3>
       
       <!-- currentDate function from "javascript/date.js" (DD/MM/YYYY) -->
       <p>Nous sommes le : <span id="dateToday">...</span></p>
     </header>
-    <main></main>
+    <main>
+      <h4>Aperçu des Réservations</h4>
+      <!-- import reservations list -->
+      <ul>
+          <% reservations.forEach((info) => { %>
+            <li>
+                <h2>Catway n°<%= info.catwayNumber %></h2>
+                <p><%= listDate(info.startDate) %> - <%= listDate(info.endDate) %></p>
+            </li>
+          <% }) %>
+      </ul>
+    </main>
     <%- include('../partials/footer') %>
-    <script src="/javascripts/currentDate.js"></script>
+    <script src="/javascripts/current-date.js"></script>
   </body>
 </html>

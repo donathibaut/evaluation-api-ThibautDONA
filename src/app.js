@@ -36,8 +36,7 @@ app.use('/dashboard', auth, dashboardRouter);
 
 
 app.use('/', indexRouter);
-app.use('/dashboard', dashboardRouter);
-app.use('/reservations', reservationsRouter);
+app.use('/reservations', auth, reservationsRouter);
 
 const errorHandler = require('./middlewares/error-handler');
 // catch 404 and forward to error handler

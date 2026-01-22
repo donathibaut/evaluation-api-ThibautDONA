@@ -1,4 +1,4 @@
-const currentDate = () => {
+function currentDate() {
     const area = document.getElementById('dateToday');
 
     // toLocaleString -> undefined / we need the user's local date

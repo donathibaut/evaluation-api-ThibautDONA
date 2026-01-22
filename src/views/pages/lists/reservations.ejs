@@ -11,16 +11,22 @@
         <h1>Réservations</h1>
     </header>
     <main>
-        <button>Créer</button>
+        <button class="crudBtn">Créer</button>
+        <%- include('../../partials/about-info') %>
         <ul>
             <% reservations.forEach((info) => { %>
                 <li>
-                    <h2><%= info.catwayNumber %></h2>
+                    <h2>Catway n°<%= info.catwayNumber %></h2>
                     <p><%= listDate(info.startDate) %> - <%= listDate(info.endDate) %></p>
+                    <div class="options">
+                        <button class="crudBtn" onclick="dataDetails('reservations', '<%= info._id %>')">Détails</button>
+                        <button class="crudBtn" onlick="">Supprimer</button>
+                    </div>
                 </li>
             <% }) %>
         </ul>
     </main>
     <%- include('../../partials/footer') %>
+    <script type="module" src="/javascripts/module/data-details.js"></script>
   </body>
 </html>

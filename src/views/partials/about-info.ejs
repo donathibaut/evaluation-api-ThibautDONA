@@ -1,0 +1,13 @@
+<!-- create a form for list details -->
+<div class="form-container" id="form-container">
+    <div class="form-container__header">
+        <h3>Détails</h3>
+    </div>
+    <div class="form-container__main">
+        <form class="form" action="/save" method="patch">
+            <ul class="form__list" id="form__list"></ul>
+            <button type="button" onclick="document.getElementById('form-container').style.display = 'none'">Annuler</button>
+            <button type="submit">Enregistrer</button>
+        </form>
+    </div>
+</div>

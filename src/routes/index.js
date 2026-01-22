@@ -12,4 +12,10 @@ const service = require('../services/users');
 // check the connection form
 router.post('/connect', service.checkUserConnection, (req, res) => {res.redirect('/dashboard')});
 
+// follow logout <a>
+router.get('/logout', function(req, res) {
+    res.clearCookie('token');
+    res.redirect('/');
+});
+
 module.exports = router;
