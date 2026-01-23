@@ -12,6 +12,7 @@ const reservationsRouter = require('./routes/lists/reservations');
 
 const mongodb = require('./db/mongo');
 
+/**CONNECTION TO MONGODB*/
 mongodb.initClientDbConnection();
 
 const app = express();
