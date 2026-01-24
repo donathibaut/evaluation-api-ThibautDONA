@@ -6,6 +6,9 @@ const logger = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+const errorHandler = require('./middlewares/error-handler');
+const auth = require('./middlewares/verify-auth');
+
 const indexRouter = require('./routes/index');
 const dashboardRouter = require('./routes/dashboard');
 const reservationsRouter = require('./routes/lists/reservations');
@@ -31,13 +34,11 @@ app.use(express.urlencoded({ extended: false }));
 
 // verify authentification to access the dashboard
 app.use(cookieParser());
-const auth = require('./middlewares/verify-auth');
-app.use('/dashboard', auth, dashboardRouter);
 
 app.use('/', indexRouter);
+app.use('/dashboard', auth, dashboardRouter);
 app.use('/reservations', auth, reservationsRouter);
 
-const errorHandler = require('./middlewares/error-handler');
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
