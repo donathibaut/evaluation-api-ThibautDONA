@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Russell - Accueil</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="/images/favicon/anchor.png" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+      <h1>Port de Plaisance de Russell</h1>
+      <p>
+        Sur cette Application, vous pourrez gérer les Réservations de Catways afin de garantir un service-client qualitatif !
+      </p>
+    </header>
+    <main>
+      <!-- Connection Form -->
+      <form method="post" action="/connect" >
+        <fieldset>
+          <legend>Connectez-vous</legend>
+
+          <!-- error message if wrong -->
+          <% if(locals.error) { %>
+            <p id="errorMessage"><%= error %></p>
+          <% } %>
+          
+          <label for="email">Adresse E-mail</label>
+          <br>
+          <input type="text" name="email">
+          <br>
+          <label for="password">Mot de Passe</label>
+          <br>
+          <input type="password" name="password">
+          <br>
+          <button type="submit">Se connecter</button>
+        </fieldset>
+      </form>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

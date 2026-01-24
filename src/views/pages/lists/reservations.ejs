@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Russell - Réservations</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="/images/favicon/anchor.png" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+        <a href="/dashboard">Retour</a>
+        <h1>Réservations</h1>
+    </header>
+    <main>
+        <button class="crudBtn">Créer</button>
+        <%- include('../../partials/about-info') %>
+        <ul>
+            <!-- <li> depending on the database -->
+            <% reservations.forEach((info) => { %>
+                <li>
+                    <h2>Catway n°<%= info.catwayNumber %></h2>
+                    <p><%= listDate(info.startDate) %> - <%= listDate(info.endDate) %></p>
+                    <div class="options">
+                        <button class="crudBtn" onclick="dataDetails('reservations', '<%= info._id %>')">Détails</button>
+                        <button class="crudBtn" onlick="">Supprimer</button>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
+    <%- include('../../partials/footer') %>
+    <script type="module" src="/javascripts/module/data-details.js"></script>
+  </body>
+</html>

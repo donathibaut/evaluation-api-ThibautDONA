@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "env-cmd nodemon ./bin/www"
+    "start": "env-cmd -f ./src/env/.env nodemon ./bin/www",
+    "dev": "env-cmd -f ./src/env/.env.dev nodemon ./bin/www",
+    "prod": "env-cmd -f ./src/env/.env.prod nodemon ./bin/www",
+    "doc" : "jsdoc -c jsdoc.json"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -13,11 +16,13 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.1.4",
     "morgan": "~1.9.1"
   },
   "devDependencies": {
     "env-cmd": "^11.0.0",
+    "jsdoc": "^4.0.5",
     "nodemon": "^3.1.11"
   }
 }

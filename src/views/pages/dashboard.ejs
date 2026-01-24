@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Russell - Tableau de Bord</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="/images/favicon/anchor.png" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+      <h1>Tableau de Bord</h1>
+
+      <%- include('../partials/nav') %>
+
+      <h2><%= user.name %></h2>
+      <h3><%= user.email %></h3>
+      
+      <!-- currentDate function from "javascript/date.js" (DD/MM/YYYY) -->
+      <p>Nous sommes le : <span id="dateToday">...</span></p>
+    </header>
+    <main>
+      <h4>Aperçu des Réservations</h4>
+      <!-- import reservations list -->
+      <ul>
+          <% reservations.forEach((info) => { %>
+            <li>
+                <h2>Catway n°<%= info.catwayNumber %></h2>
+                <p><%= listDate(info.startDate) %> - <%= listDate(info.endDate) %></p>
+            </li>
+          <% }) %>
+      </ul>
+    </main>
+    <%- include('../partials/footer') %>
+    <script src="/javascripts/current-date.js"></script>
+  </body>
+</html>

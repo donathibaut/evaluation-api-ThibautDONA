@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <title><%= title %></title>
+<head>
+    <title><%= error.status %></title>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="/images/favicon/anchor.png" />
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+</head>
+<body>
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+</body>
 </html>
