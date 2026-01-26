@@ -34,6 +34,7 @@ router.get('/api/:id', async (req, res, next) => {
     };
 });
 
+// create-reservation
 router.get('/create-reservation', async function(req, res, next) {
     try {
         res.render('lists/create/create-reservation');
@@ -41,5 +42,8 @@ router.get('/create-reservation', async function(req, res, next) {
         next(e);
     };
 });
+
+const postReservation = require('../../middlewares/create/postReservation');
+router.post('/add-reservation', postReservation);
 
 module.exports = router;

@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer une Réservation</title>
-</head>
-<body>
-    <header>
-        <h1>Créer une nouvelle réservation</h1>
-    </header>
-    <main>
-        <form action="" method="post">
-        <fieldset>
-            <label for="catwayNumber">catwayNumber</label>
-            <br>
-            <input type="number" name="catwayNumber">
-            <br>
-            <label for="clientName">clientName</label>
-            <br>
-            <input type="text" name="clientName">
-            <br>
-            <label for="boatName">boatName</label>
-            <br>
-            <input type="text" name="boatName">
-            <br>
-            <label for="startDate">startDate</label>
-            <br>
-            <input type="date" name="startDate">
-            <br>
-            <label for="endDate">startDate</label>
-            <br>
-            <input type="date" name="endDate">
-            <br>
-            <button type="submit">Envoyer</button>
-        </fieldset>
-        </form>
-    </main>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Créer une Réservation</title>
+    </head>
+    <body>
+        <header>
+            <h1>Créer une nouvelle réservation</h1>
+            <a href="/dashboard">Retour</a>
+        </header>
+        <main>
+            <form action="/reservations/add-reservation" method="post">
+            <fieldset>
+                <label for="catwayNumber">catwayNumber</label>
+                <br>
+                <input type="number" name="catwayNumber">
+                <br>
+                <label for="clientName">clientName</label>
+                <br>
+                <input type="text" name="clientName">
+                <br>
+                <label for="boatName">boatName</label>
+                <br>
+                <input type="text" name="boatName">
+                <br>
+                <label for="startDate">startDate</label>
+                <br>
+                <input type="datetime-local" name="startDate">
+                <br>
+                <label for="endDate">endDate</label>
+                <br>
+                <input type="datetime-local" name="endDate">
+                <br>
+                <button type="submit">Envoyer</button>
+            </fieldset>
+            </form>
+        </main>
+    </body>
 </html>
