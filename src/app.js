@@ -1,5 +1,7 @@
 const createError = require('http-errors');
 const express = require('express');
+const swaggerUI = require('swagger-ui-express');
+const swaggerJSDOC = require('swagger-jsdoc');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -11,6 +13,7 @@ const auth = require('./middlewares/verify-auth');
 
 const indexRouter = require('./routes/index');
 const dashboardRouter = require('./routes/dashboard');
+const docRouter = require('./routes/documentation');
 const reservationsRouter = require('./routes/lists/reservations');
 
 const mongodb = require('./db/mongo');
@@ -37,6 +40,7 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/dashboard', auth, dashboardRouter);
+app.use('/documentation', auth, docRouter);
 app.use('/reservations', auth, reservationsRouter);
 
 // catch 404 and forward to error handler

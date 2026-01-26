@@ -3,9 +3,13 @@ const router = express.Router();
 const service = require('../services/users');
 
 router.get('/', function(req, res, next) {
-    res.render('index', { 
-        error : req.query.error
-    });
+    try {
+        res.render('index', { 
+            error : req.query.error
+        });
+    } catch(e) {
+        next(e);
+    }
 });
 
 // check the connection form
