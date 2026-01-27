@@ -1,5 +1,6 @@
 const createError = require('http-errors');
 const express = require('express');
+const methodOverride = require('method-override');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
@@ -12,6 +13,8 @@ const auth = require('./middlewares/verify-auth');
 const indexRouter = require('./routes/index');
 const dashboardRouter = require('./routes/dashboard');
 const reservationsRouter = require('./routes/lists/reservations');
+const catwaysRouter = require('./routes/lists/catways');
+const usersRouter = require('./routes/lists/users');
 
 const mongodb = require('./db/mongo');
 
@@ -55,12 +58,16 @@ app.use(express.static(path.join(__dirname, '../public')));
 // get elements from HTML forms
 app.use(express.urlencoded({ extended: false }));
 
+app.use(methodOverride('_method'));
+
 // verify authentification to access the dashboard
 app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/dashboard', auth, dashboardRouter);
 app.use('/reservations', auth, reservationsRouter);
+app.use('/catways', auth, catwaysRouter);
+app.use('/users', auth, usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

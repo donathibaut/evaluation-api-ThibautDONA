@@ -3,8 +3,8 @@
   <head>
     <title>Russell - Réservations</title>
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="/images/favicon/anchor.png" />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" type="image/png" href="/images/favicon/anchor.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
     <header>
@@ -13,7 +13,7 @@
     </header>
     <main>
         <a href="/reservations/create-reservation">Créer</a>
-        <%- include('../../partials/about-info') %>
+        <%- include('../../partials/about/about-reservation') %>
         <ul>
             <!-- <li> depending on the database -->
             <% reservations.forEach((info) => { %>
@@ -22,7 +22,12 @@
                     <p><%= listDate(info.startDate) %> - <%= listDate(info.endDate) %></p>
                     <div class="options">
                         <button class="crudBtn" onclick="dataDetails('reservations', '<%= info._id %>')">Détails</button>
-                        <button class="crudBtn" onlick="">Supprimer</button>
+                        
+                        <!-- YOU NEED TO DOUBLE CLICK -->
+                        <form class="deleteBtn" action="/reservations/delete-reservation?_method=DELETE" method="post">
+                            <input type="hidden" name="_id" value="<%= info._id %>">
+                            <button class="crudBtn" type="button" ondblclick="this.closest('form').submit()">Supprimer</button>
+                        </form>
                     </div>
                 </li>
             <% }) %>

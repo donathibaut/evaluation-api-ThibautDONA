@@ -18,7 +18,7 @@ export default function listDetails(data) {
         let value = data[key];
 
         // avoid modifying a sensitive data
-        if(key === "_id" || key === "__v") continue;
+        if(["_id", "__v", "createdAt", "updatedAt", "password"].includes(key)) continue;
 
         // define the type of value
         let type = "text";
