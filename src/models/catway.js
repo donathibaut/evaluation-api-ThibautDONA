@@ -11,11 +11,13 @@ const catwaySchema = Schema({
         type : String, 
         required : [true, "Type required"], 
         enum : ["long", "short"], 
-        lowercase : true
+        lowercase : true,
+        trim : true
     },
     catwayState : {
         type : String, 
-        required : [true, "Message required"]
+        required : [true, "Message required"],
+        trim : true
     }
     }, {
     // add createdAt et updatedAt in the database

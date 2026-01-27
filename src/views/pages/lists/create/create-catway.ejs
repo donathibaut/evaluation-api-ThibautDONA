@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Ajouter un Catway</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/images/favicon/anchor.png">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="/catways">Retour</a>
+            <h1>Ajouter un nouveau catway</h1>
+        </header>
+        <main>
+            <form action="/catways/add-catway" method="post">
+            <fieldset>
+                <label for="catwayNumber">catwayNumber</label>
+                <br>
+                <input type="number" name="catwayNumber" id="catwayNumber">
+                <br>
+                <label for="catwayType">catwayType</label>
+                <br>
+                <input type="text" name="catwayType" id="catwayType" placeholder="short ou long">
+                <br>
+                <label for="catwayState">catwayState</label>
+                <br>
+                <textarea name="catwayState" id="catwayState" placeholder="Quel est l'état du catway..."></textarea>
+                <br>
+                <button type="submit">Envoyer</button>
+            </fieldset>
+            </form>
+        </main>
+    </body>
+</html>

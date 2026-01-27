@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Créer un Utilisateur</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/images/favicon/anchor.png">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="/users">Retour</a>
+            <h1>Créer un nouvel utilisateur</h1>
+        </header>
+        <main>
+            <form action="/users/add-user" method="post">
+            <fieldset>
+                <label for="name">name</label>
+                <br>
+                <input type="text" name="name" id="name">
+                <br>
+                <label for="firstname">firstname</label>
+                <br>
+                <input type="text" name="firstname" id="firstname">
+                <br>
+                <label for="email">email</label>
+                <br>
+                <input type="text" name="email" id="email">
+                <br>
+                <label for="password">password</label>
+                <br>
+                <input type="password" name="password" id="password">
+                <br>
+                <button type="submit">Envoyer</button>
+            </fieldset>
+            </form>
+        </main>
+    </body>
+</html>

@@ -31,15 +31,14 @@ const userSchema = new Schema({
 });
 
 // hash the password only when modified
-userSchema.pre('save', function(next) {
+userSchema.pre('save', async function() {
     if(!this.isModified('password')) {
-        return next();
+        return;
     };
     try {
-        this.password = bcrypt.hashSync(this.password, 10);
-        next();
+        this.password = await bcrypt.hash(this.password, 10);
     } catch(e) {
-        next(e);
+        throw e;
     }
 });
 

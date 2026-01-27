@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Russell - Réservations</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="/images/favicon/anchor.png">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <header>
+        <a href="/dashboard">Retour</a>
+        <h1>Réservations</h1>
+    </header>
+    <main>
+        <a href="/users/create-user">Créer</a>
+        <%- include('../../partials/about/about-user') %>
+        <ul>
+            <!-- <li> depending on the database -->
+            <% users.forEach((info) => { %>
+                <li>
+                    <h2><%= info.name %> <%= info.firstname %></h2>
+                    <div class="options">
+                        <button class="crudBtn" onclick="dataDetails('users', '<%= info._id %>')">Détails</button>
+
+                        <!-- YOU NEED TO DOUBLE CLICK -->
+                        <form class="deleteBtn" action="/users/delete-user?_method=DELETE" method="post">
+                            <input type="hidden" name="_id" value="<%= info._id %>">
+                            <button class="crudBtn" type="button" ondblclick="this.closest('form').submit()">Supprimer</button>
+                        </form>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
+    <%- include('../../partials/footer') %>
+    <script type="module" src="/javascripts/module/data-details.js"></script>
+  </body>
+</html>

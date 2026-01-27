@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Créer une Réservation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="/images/favicon/anchor.png">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <header>
+            <a href="/reservations">Retour</a>
+            <h1>Créer une nouvelle réservation</h1>
+        </header>
+        <main>
+            <form action="/reservations/add-reservation" method="post">
+            <fieldset>
+                <label for="catwayNumber">catwayNumber</label>
+                <br>
+                <input type="number" name="catwayNumber" id="catwayNumber">
+                <br>
+                <label for="clientName">clientName</label>
+                <br>
+                <input type="text" name="clientName" id="clientName">
+                <br>
+                <label for="boatName">boatName</label>
+                <br>
+                <input type="text" name="boatName" id="boatName">
+                <br>
+                <label for="startDate">startDate</label>
+                <br>
+                <input type="datetime-local" name="startDate" id="startDate">
+                <br>
+                <label for="endDate">endDate</label>
+                <br>
+                <input type="datetime-local" name="endDate" id="endDate">
+                <br>
+                <button type="submit">Envoyer</button>
+            </fieldset>
+            </form>
+        </main>
+    </body>
+</html>
