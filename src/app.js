@@ -18,6 +18,7 @@ const usersRouter = require('./routes/lists/users');
 
 const mongodb = require('./db/mongo');
 
+/**CONNECTION TO MONGODB*/
 mongodb.initClientDbConnection();
 
 const app = express();
