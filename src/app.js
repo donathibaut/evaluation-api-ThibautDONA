@@ -1,3 +1,6 @@
+/**
+ * @file app.js
+ */
 const createError = require('http-errors');
 const express = require('express');
 const methodOverride = require('method-override');
@@ -6,6 +9,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
 
 const errorHandler = require('./middlewares/error-handler');
 const auth = require('./middlewares/verify-auth');
@@ -24,22 +29,27 @@ const app = express();
 
 /**
  * swagger configuration
+ * @type {Object}
+ * @property {boolean} failOnErrors - if true : throw when parsing errors
+ * @property {Object} definition
+ * @property {string} definition.openapi
+ * @property {Object} definition.info
+ * @property {string} definition.info.title
+ * @property {string} definition.info.version
+ * @property {string[]} apis
  */
-const swaggerUi = require('swagger-ui-express');
-
-const swaggerJsdoc = require('swagger-jsdoc');
 
 const options = {
-  failOnErrors: true, // Whether or not to throw when parsing errors. Defaults to false.
+  failOnErrors: false,
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Hello World',
+      title: 'Documentation',
       version: '1.0.0',
     },
   },
-  apis: ['./routes*.js', './routes/lists*.js'],
-};
+  apis: ['./src/routes/*.js', './src/routes/lists/*.js'],
+}
 
 const openapiSpecification = swaggerJsdoc(options);
 

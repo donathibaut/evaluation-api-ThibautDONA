@@ -1,8 +1,23 @@
+/**
+ * @file user.js
+ * @module models/user
+ * @description User model
+ */
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const bcrypt = require('bcrypt');
 
+/**
+ * User Schema
+ * @typedef {Object} User
+ * @property {string} name - required
+ * @property {string} firstname -required
+ * @property {string} email - required
+ * @property {string} password -required
+ * @property {Date} createdAt
+ * @property {Date} updatedAt
+ */
 const userSchema = new Schema({
     name : {
         type : String,
@@ -11,7 +26,8 @@ const userSchema = new Schema({
     },
     firstname : {
         type : String,
-        trim : true
+        trim : true,
+        required : [true, "Firstname required"]
     },
     email : {
         type : String,
@@ -30,7 +46,11 @@ const userSchema = new Schema({
     timestamps : true
 });
 
-// hash the password only when modified
+/**
+ * hash the password only when modified
+ * @function
+ * @async
+ */
 userSchema.pre('save', async function() {
     if(!this.isModified('password')) {
         return;

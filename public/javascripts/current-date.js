@@ -1,3 +1,13 @@
+/**
+ * @file current-date.js
+ * @module javascripts/current-date
+ * @description display date --> DD/MM/YYYY
+ */
+/**
+ * change the date format
+ * @function currentDate
+ * @returns {void}
+ */
 function currentDate() {
     const area = document.getElementById('dateToday');
 

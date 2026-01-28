@@ -1,9 +1,21 @@
+/**
+ * check data from the connection form (index.ejs)
+ * @file users.js
+ * @module services/users
+ */
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-// check data from the connection form (index.ejs)
 const User = require('../models/user');
 
+/**
+ * if email & password = true : token created
+ * @function checkUserConnection
+ * @async
+ * @param {Object} req - holding email & password
+ * @param {Object} res - render index OR create a connection cookie
+ * @param {Function} next - callback
+ */
 exports.checkUserConnection = async (req, res, next) => {
     try {
         // pick posted data in req.body
@@ -13,22 +25,19 @@ exports.checkUserConnection = async (req, res, next) => {
         const userCheck = await User.findOne({email : email});
 
         if (!userCheck) {
-            console.log(userCheck);
-            return res.render('index', { 
-                title : 'Gestion du Port - Accueil',
+            return res.render('index', {
                 error: 'Email ou mot de passe incorrect'
             });
-        };
+        }
         
         // check password in the db
         const passwordCheck = await bcrypt.compare(password, userCheck.password);
 
         if (!passwordCheck) {
-            return res.render('index', { 
-                title : 'Gestion du Port - Accueil',
+            return res.render('index', {
                 error: 'Email ou mot de passe incorrect' 
             });
-        };
+        }
 
         // create a cookie to stay connected (24h)
         const expiresIn = 24*60*60;
@@ -48,4 +57,4 @@ exports.checkUserConnection = async (req, res, next) => {
     } catch(e) {
         next(e);
     }
-};
+}

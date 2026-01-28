@@ -1,5 +1,19 @@
+/**
+ * @file patchUser.js
+ * @module middlewares/update/patchUser
+ * @description PATCH method for User
+ */
 const User = require('../../models/user');
 
+/**
+ * update user data
+ * @function patchUser
+ * @async
+ * @param {import('express').Request} req - hold selected user data
+ * @param {import('express').Response} res
+ * @param {import('express').NextFunction} next
+ * @returns {Promise<void>}
+ */
 const patchUser = async function(req, res, next) {
     try {
         const id = req.body._id;
