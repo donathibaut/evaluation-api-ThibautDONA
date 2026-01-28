@@ -9,9 +9,9 @@ const Reservation = require('../../models/reservation');
  * delete reservation data
  * @function deleteReservation
  * @async
- * @param {import('express').Request} req - hold reservation id
- * @param {import('express').Response} res
- * @param {import('express').NextFunction} next
+ * @param {Request} req - hold reservation id
+ * @param {Response} res
+ * @param {NextFunction} next
  * @returns {Promise<void>}
  */
 const deleteReservation = async function(req, res, next) {

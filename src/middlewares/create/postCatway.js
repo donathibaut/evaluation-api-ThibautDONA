@@ -9,9 +9,9 @@ const Catway = require("../../models/catway");
  * create catway data
  * @function postCatway
  * @async
- * @param {import('express').Request} req - hold selected catway data
- * @param {import('express').Response} res
- * @param {import('express').NextFunction} next
+ * @param {Request} req - hold selected catway data
+ * @param {Response} res
+ * @param {NextFunction} next
  * @returns {Promise<void>}
  */
 const postCatway = async function(req, res, next) {

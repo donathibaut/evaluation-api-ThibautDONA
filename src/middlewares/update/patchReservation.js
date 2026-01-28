@@ -9,9 +9,9 @@ const Reservation = require('../../models/reservation');
  * update reservation data
  * @function patchReservation
  * @async
- * @param {import('express').Request} req - hold selected reservation data
- * @param {import('express').Response} res
- * @param {import('express').NextFunction} next
+ * @param {Request} req - hold selected reservation data
+ * @param {Response} res
+ * @param {NextFunction} next
  * @returns {Promise<void>}
  */
 const patchReservation = async function(req, res, next) {

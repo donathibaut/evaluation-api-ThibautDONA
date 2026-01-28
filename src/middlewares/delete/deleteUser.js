@@ -9,9 +9,9 @@ const User = require('../../models/user');
  * delete user data
  * @function deleteUser
  * @async
- * @param {import('express').Request} req - hold user id
- * @param {import('express').Response} res
- * @param {import('express').NextFunction} next
+ * @param {Request} req - hold user id
+ * @param {Response} res
+ * @param {NextFunction} next
  * @returns {Promise<void>}
  */
 const deleteUser = async function(req, res, next) {

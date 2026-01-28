@@ -1,0 +1,13 @@
+{
+    "source": {
+        "include": ["src", "public/javascripts"],
+        "includePattern": ".+\\.js$",
+        "excludePattern": "(^|\\/|\\\\)node_modules"
+    },
+    "opts": {
+        "destination": "./out",
+        "recurse": true,
+        "readme": "README.md"
+    },
+    "plugins": ["plugins/markdown"]
+}

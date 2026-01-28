@@ -9,9 +9,9 @@ const User = require("../../models/user");
  * create user data
  * @function postUser
  * @async
- * @param {import('express').Request} req - hold selected user data
- * @param {import('express').Response} res
- * @param {import('express').NextFunction} next
+ * @param {Request} req - hold selected user data
+ * @param {Response} res
+ * @param {NextFunction} next
  * @returns {Promise<void>}
  */
 const postUser = async function(req, res, next) {
