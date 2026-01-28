@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <title>Russell - Réservations</title>
+    <title>Russell - Utilisateurs</title>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="/images/favicon/anchor.png">
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -26,6 +26,7 @@
                         <form class="deleteBtn" action="/users/delete-user?_method=DELETE" method="post">
                             <input type="hidden" name="_id" value="<%= info._id %>">
                             <button class="crudBtn" type="button" ondblclick="this.closest('form').submit()">Supprimer</button>
+                            <p class="dbclickMessage">Double-cliquez</p>
                         </form>
                     </div>
                 </li>

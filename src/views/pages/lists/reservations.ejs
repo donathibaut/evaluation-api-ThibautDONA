@@ -27,6 +27,7 @@
                         <form class="deleteBtn" action="/reservations/delete-reservation?_method=DELETE" method="post">
                             <input type="hidden" name="_id" value="<%= info._id %>">
                             <button class="crudBtn" type="button" ondblclick="this.closest('form').submit()">Supprimer</button>
+                            <p class="dbclickMessage">Double-cliquez</p>
                         </form>
                     </div>
                 </li>
