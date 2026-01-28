@@ -6,3 +6,9 @@ body {
 .form-container {
   display: none;
 }
+
+.dbclickMessage {
+  font-size: 0.8rem;
+  font-style: italic;
+  display: inline;
+}

@@ -143,7 +143,6 @@ router.patch('/patch-catway', patchCatway);
  *         description: Page loaded
  */
 const deleteCatway = require('../../middlewares/delete/deleteCatway');
-const catway = require('../../models/catway');
 router.delete('/delete-catway', deleteCatway);
 
 module.exports = router;
