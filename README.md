@@ -15,20 +15,35 @@ Ce projet utilise les ressources suivantes :
 https://www.nvmnode.com/guide/installation.html
 
 2. Installez Node.js + npm :
-Dans le terminal, utilisez : nvm install 24.12.0
-puis : nvm use 24.12.0
-Pour voir si c'est bien installé : node -v
+Dans le terminal, utilisez : 
+```bash
+nvm install 24.12.0
+```
+puis : 
+```bash
+nvm use 24.12.0
+```
+Pour voir si c'est bien installé : 
+```bash
+node -v
+```
 (Vous devriez voir : v.24.12.0)
 
 3. Installez git : 
 https://git-scm.com
 
 4. Clonez le repository :
-Dans votre terminal, utilisez : git clone https://github.com/donathibaut/evaluation-api-ThibautDONA
+Dans votre terminal, utilisez : 
+```bash
+git clone https://github.com/donathibaut/evaluation-api-ThibautDONA
+```
 
 5. Installez les packages (dont Express) :
 Avec le terminal, allez à la racine du projet.
-Dans le terminal, utilisez : npm i
+Dans le terminal, utilisez : 
+```bash
+npm i
+```
 ---------------------------------------------------------------------------
 English
 # evaluation-api-ThibautDONA
@@ -47,17 +62,31 @@ This project uses the following resources :
 https://www.nvmnode.com/guide/installation.html
 
 2. Installez Node.js + npm :
-In the terminal, use : nvm install 24.12.0
-then : nvm use 24.12.0
-To see if it's correctly installed : node -v
+In the terminal, use : 
+```bash
+nvm install 24.12.0
+```
+then : 
+```bash
+nvm use 24.12.0
+```
+To see if it's correctly installed : 
+```bash
+node -v
+```
 (You should see : v.24.12.0)
 
 3. Install git : 
 https://git-scm.com
 
 4. Clone this repository :
-In your terminal, use : git clone https://github.com/donathibaut/evaluation-api-ThibautDONA
-
+In your terminal, use : 
+```bash
+git clone https://github.com/donathibaut/evaluation-api-ThibautDONA
+```
 5. Install the packages (including Express) :
 With the terminal, go to the project root folder.
-In the terminal, use : npm i
+In the terminal, use : 
+```bash
+npm i
+```
