@@ -1,5 +1,19 @@
+/**
+ * @file patchCatway.js
+ * @module middlewares/update/patchCatway
+ * @description PATCH method for Catway
+ */
 const Catway = require('../../models/catway');
 
+/**
+ * update catway data
+ * @function patchReservation
+ * @async
+ * @param {Request} req - hold selected catway data
+ * @param {Response} res
+ * @param {NextFunction} next
+ * @returns {Promise<void>}
+ */
 const patchCatway = async function(req, res, next) {
     try {
         const id = req.body._id;

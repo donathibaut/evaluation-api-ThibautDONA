@@ -1,5 +1,19 @@
+/**
+ * @file patchReservation.js
+ * @module middlewares/update/patchReservation
+ * @description PATCH method for Reservation
+ */
 const Reservation = require('../../models/reservation');
 
+/**
+ * update reservation data
+ * @function patchReservation
+ * @async
+ * @param {Request} req - hold selected reservation data
+ * @param {Response} res
+ * @param {NextFunction} next
+ * @returns {Promise<void>}
+ */
 const patchReservation = async function(req, res, next) {
     try {
         const id = req.body._id;

@@ -1,4 +1,14 @@
-// give data from the database to about-info.ejs
+/**
+ * @file list-details.js
+ * @module javascripts/module/list-details
+ * @description display data elements to the details form --> about-*.ejs
+ */
+/**
+ * give data from the database to about-*.ejs
+ * @function listDetails
+ * @param {Object} data - hold db object data
+ * @returns {void} - interact with the DOM
+ */
 export default function listDetails(data) {
     const ul = document.getElementById('form__list');
 

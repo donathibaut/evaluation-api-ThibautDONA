@@ -1,6 +1,18 @@
+/**
+ * @file verify-auth.js
+ * @module middlewares/verify-auth
+ * @description verify user authentification
+ */
 const jwt = require('jsonwebtoken');
 
-// verify connection token
+/**
+ * verify connection token
+ * @function auth
+ * @param {Request} req - hold the token and connected user data
+ * @param {Response} res - delete the cookie if non-compliant
+ * @param {NextFunction} next
+ * @returns {Promise<void>}
+ */
 const auth = function(req, res, next) {
     const token = req.cookies.token;
 

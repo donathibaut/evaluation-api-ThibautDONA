@@ -1,5 +1,19 @@
+/**
+ * @file deleteUser.js
+ * @module middlewares/delete/deleteUser
+ * @description DELETE method for User
+ */
 const User = require('../../models/user');
 
+/**
+ * delete user data
+ * @function deleteUser
+ * @async
+ * @param {Request} req - hold user id
+ * @param {Response} res
+ * @param {NextFunction} next
+ * @returns {Promise<void>}
+ */
 const deleteUser = async function(req, res, next) {
     try {
         const id = req.body._id;
